@@ -26,8 +26,8 @@ app.use('/', express.static(PUBLIC_DIR));
 app.set('trust proxy', true);
 
 // Routes
-app.use(PostRoute);
-app.use(UserRoute);
+app.use("/api",PostRoute);
+app.use("/api",UserRoute);
 app.get('*', (req, res) => {
   res.status(404).json({
     message: 'Not found'
